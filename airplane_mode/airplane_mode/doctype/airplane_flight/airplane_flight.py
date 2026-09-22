@@ -2,10 +2,21 @@
 # For license information, please see license.txt
 
 import frappe
-from frappe.model.document import Document
+from frappe.website.website_generator import WebsiteGenerator
 
 
-class AirplaneFlight(Document):
-	def on_submit():
-		self.status = "Completed"
-		return
+class AirplaneFlight(WebsiteGenerator):
+    website = frappe._dict(
+        template="templates/generators/airplane_flight.html",
+        condition_field="published",
+        page_title_field="route",
+    )
+    
+    def get_context(self, context):
+        context.no_cache = 1
+        context.source_code = self.source_airport_code
+        context.destination_code = self.destination_airport_code
+
+    def on_submit():
+        self.status = "Completed"
+        return
