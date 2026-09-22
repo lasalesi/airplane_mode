@@ -1,7 +1,29 @@
 {% extends "templates/web.html" %}
 
 {% block page_content %}
-<h1>{{ title |e }}</h1>
+<h1>Flights</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Duration</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for flight in flights %}
+        <tr>
+            <td>{{ flight.source_airport_code }}</td>
+            <td>{{ flight.destination_airport_code }}</td>
+            <td>{{ flight.date_of_departure }}</td>
+            <td>{{ flight.time_of_departure }}</td>
+            <td>{{ flight.duration }}</td>
+            <td><a href="/{{ flight.route }}">View Flight</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
-
-<!-- this is a sample default web page template -->
