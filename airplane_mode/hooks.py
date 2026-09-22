@@ -11,15 +11,15 @@ app_license = "agpl-3.0"
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "airplane_mode",
-# 		"logo": "/assets/airplane_mode/logo.png",
-# 		"title": "Airplane Mode",
-# 		"route": "/airplane_mode",
-# 		"has_permission": "airplane_mode.api.permission.has_app_permission"
-# 	}
-# ]
+add_to_apps_screen = [
+ 	{
+ 		"name": "airplane_mode",
+ 		"logo": "/assets/airplane_mode/img/turtle.png",
+ 		"title": "Airplane Mode",
+ 		"route": "/airplane_mode",
+ 		"has_permission": "airplane_mode.api.permission.has_app_permission"
+ 	}
+ ]
 
 # Includes in <head>
 # ------------------

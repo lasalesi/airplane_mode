@@ -1,0 +1,73 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"0yFY9-1oq_\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Settings</span>\",\"col\":12}},{\"id\":\"0XriH_DXUk\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}}]",
+ "creation": "2026-08-14 16:20:29.428880",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "setting-gear",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Airplane Mode",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Airplane Mode",
+   "link_count": 8,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Airlines",
+   "link_count": 0,
+   "link_to": "Airlines",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "All Passengers",
+   "link_count": 0,
+   "link_to": "Flight Passenger",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "All Airplanes",
+   "link_count": 0,
+   "link_to": "Airplane",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-09-22 17:05:51.061046",
+ "modified_by": "Administrator",
+ "module": "Airplane Mode",
+ "name": "Airplane Mode",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "sequence_id": 40.0,
+ "shortcuts": [],
+ "title": "Settings"
+}
