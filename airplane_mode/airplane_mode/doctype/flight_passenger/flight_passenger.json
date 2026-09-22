@@ -11,6 +11,7 @@
   "col_1",
   "first_name",
   "last_name",
+  "full_name",
   "col_2",
   "date_of_birth"
  ],
@@ -46,6 +47,12 @@
    "in_list_view": 1,
    "label": "Date Of Birth",
    "reqd": 1
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
@@ -56,7 +63,7 @@
    "link_fieldname": "passenger"
   }
  ],
- "modified": "2026-09-22 18:13:37.537424",
+ "modified": "2026-09-22 18:25:46.416888",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Flight Passenger",
