@@ -1,29 +1,13 @@
 {% extends "templates/web.html" %}
 
 {% block page_content %}
-<h1>Flights</h1>
-<table class="table">
-    <thead>
-        <tr>
-            <th>From</th>
-            <th>To</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Duration</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for flight in flights %}
-        <tr>
-            <td>{{ flight.source_airport_code }}</td>
-            <td>{{ flight.destination_airport_code }}</td>
-            <td>{{ flight.date_of_departure }}</td>
-            <td>{{ flight.time_of_departure }}</td>
-            <td>{{ flight.duration }}</td>
-            <td><a href="/{{ flight.route }}">View Flight</a></td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<h1>Flight {{ doc.name }}</h1>
+<p><strong>Airline:</strong> {% set airplane = frappe.get_doc("Airplane", doc.airplane) %}{{ airplane.airline }}</p>
+<p><strong>From:</strong> {{ doc.source_airport_code }}</p>
+<p><strong>To:</strong> {{ doc.destination_airport_code }}</p>
+<p><strong>Departure Date:</strong> {{ frappe.utils.format_date(doc.date_of_departure, "d MMMM, YYYY") }}</p>
+<p><strong>Departure Time:</strong> {{ doc.time_of_departure }}</p>
+<p><strong>Duration:</strong> {{ frappe.utils.format_duration(doc.duration) }}</p>
+
+<a href="/book-flight-ticket-web-form/new?flight={{ doc.name }}" class="btn btn-primary">Book Flight</a>
 {% endblock %}

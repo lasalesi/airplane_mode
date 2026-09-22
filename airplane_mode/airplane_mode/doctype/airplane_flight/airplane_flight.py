@@ -17,6 +17,10 @@ class AirplaneFlight(WebsiteGenerator):
         context.source_code = self.source_airport_code
         context.destination_code = self.destination_airport_code
 
+    def before_save(self):
+      if not self.route:
+          self.route = f"flight/{self.name}"
+          
     def on_submit():
         self.status = "Completed"
         return
