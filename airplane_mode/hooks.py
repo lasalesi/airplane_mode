@@ -262,3 +262,11 @@ add_to_apps_screen = [
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+# Export web page
+# use: bench export-fixtures
+fixtures = [
+    {
+        "doctype": "Web Page",
+        "filters": [["name", "in", ["show-me"]]]
+    }
+]
