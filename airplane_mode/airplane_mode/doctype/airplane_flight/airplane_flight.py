@@ -3,7 +3,7 @@
 
 import frappe
 from frappe.website.website_generator import WebsiteGenerator
-
+import re
 
 class AirplaneFlight(WebsiteGenerator):
     website = frappe._dict(
@@ -18,9 +18,10 @@ class AirplaneFlight(WebsiteGenerator):
         context.destination_code = self.destination_airport_code
 
     def before_save(self):
-      if not self.route:
-          self.route = f"flight/{self.name}"
-          
+        if not self.route:
+            slug = re.sub(r"[^a-z0-9]+", "-", self.name.lower()).strip("-")
+            self.route = f"flight/{slug}"
+        
     def on_submit(self):
         self.status = "Completed"
         return

@@ -3,6 +3,6 @@
     <td>{{ destination_airport_code }}</td>
     <td>{{ date_of_departure }}</td>
     <td>{{ time_of_departure }}</td>
-    <td>{{ duration }}</td>
+    <td>{{ {{ frappe.utils.format_duration(duration) }} }}</td>
     <td><a href="/{{ route }}">View Flight</a></td>
 </tr>
