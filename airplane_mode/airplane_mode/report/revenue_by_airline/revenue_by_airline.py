@@ -15,8 +15,9 @@ def execute(filters: dict | None = None):
     columns = get_columns()
     data = get_data()
     chart = get_chart(data)
+    report_summary = get_report_summary(data)
 
-    return columns, data, None, chart
+    return columns, data, None, chart, report_summary
 
 def execute_snapshot_report(filters: dict | None = None):
     """Return columns and data for the report.
@@ -101,3 +102,14 @@ def get_chart(data):
         "type": "donut",
         "height": 300
     }
+
+def get_report_summary(data):
+    total_revenue = sum(d["revenue"] for d in data)
+
+    return [
+        {
+            "label": _("Total Revenue"),
+            "value": total_revenue,
+            "datatype": "Currency",
+        }
+    ]
