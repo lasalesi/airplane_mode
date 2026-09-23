@@ -8,7 +8,7 @@ from frappe.website.website_generator import WebsiteGenerator
 class AirplaneFlight(WebsiteGenerator):
     website = frappe._dict(
         template="templates/generators/airplane_flight.html",
-        condition_field="published",
+        condition_field="is_published",
         page_title_field="route",
     )
     
@@ -21,6 +21,6 @@ class AirplaneFlight(WebsiteGenerator):
       if not self.route:
           self.route = f"flight/{self.name}"
           
-    def on_submit():
+    def on_submit(self):
         self.status = "Completed"
         return
