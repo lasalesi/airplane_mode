@@ -53,7 +53,7 @@ def get_columns() -> list[dict]:
         {
             "label": _("Revenue"),
             "fieldname": "revenue",
-            "fieldtype": "Int",
+            "fieldtype": "Currency",
             "width": "150px"
         },
     ]
