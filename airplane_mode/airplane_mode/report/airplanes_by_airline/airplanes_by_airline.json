@@ -1,0 +1,32 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2026-09-23 08:53:20.009986",
+ "disable_prepared_report_automation": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "doctype_to_sync": [],
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": null,
+ "modified": "2026-09-23 08:53:20.009986",
+ "modified_by": "Administrator",
+ "module": "Airplane Mode",
+ "name": "Airplanes by Airline",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT \n    `airline` AS `Airline:Data:200`, \n    COUNT(`name`) AS `Count:Int:150`\nFROM `tabAirplane`\nGROUP BY `airline`;\n",
+ "ref_doctype": "Airplane",
+ "report_name": "Airplanes by Airline",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "snapshot_report": 0,
+ "timeout": 0
+}

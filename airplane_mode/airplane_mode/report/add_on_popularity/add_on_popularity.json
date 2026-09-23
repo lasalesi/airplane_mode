@@ -1,0 +1,46 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [
+  {
+   "fieldname": "add_on_type",
+   "fieldtype": "Link",
+   "label": "Add-On Type",
+   "options": "Airplane Ticket Add-on Type",
+   "width": 200
+  },
+  {
+   "fieldname": "sold_count",
+   "fieldtype": "Int",
+   "label": "Sold Count",
+   "width": 150
+  }
+ ],
+ "creation": "2026-09-23 08:55:26.577386",
+ "disable_prepared_report_automation": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "doctype_to_sync": [],
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": null,
+ "modified": "2026-09-23 08:58:32.840843",
+ "modified_by": "Administrator",
+ "module": "Airplane Mode",
+ "name": "Add-On Popularity",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT \n    `add_on_type` AS `add_on_type`, \n    COUNT(`name`) AS `sold_count`\nFROM `tabAirplane Ticket Add-on Item`\nGROUP BY `add_on_type`\nORDER BY COUNT(`name`) DESC;\n",
+ "ref_doctype": "Airplane Ticket",
+ "report_name": "Add-On Popularity",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "snapshot_report": 0,
+ "timeout": 0
+}

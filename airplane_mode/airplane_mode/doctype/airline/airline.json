@@ -12,7 +12,8 @@
   "customer_care_number",
   "headquarters",
   "col_2",
-  "founding_year"
+  "founding_year",
+  "website"
  ],
  "fields": [
   {
@@ -47,6 +48,12 @@
    "fieldtype": "Int",
    "label": "Founding Year",
    "non_negative": 1
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website",
+   "options": "URL"
   }
  ],
  "grid_page_length": 50,
@@ -57,7 +64,7 @@
    "link_fieldname": "airline"
   }
  ],
- "modified": "2026-09-22 18:11:35.762972",
+ "modified": "2026-09-23 08:24:20.824431",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airline",

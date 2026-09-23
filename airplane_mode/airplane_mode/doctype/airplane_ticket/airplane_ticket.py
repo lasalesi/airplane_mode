@@ -5,7 +5,23 @@ import frappe
 from frappe.model.document import Document
 import random
 
-class AirplaneTicket(Document):    
+class AirplaneTicket(Document):
+    def before_insert(self):
+        # check if there are seats available
+        
+        capacity = frappe.get_value("Airplane", 
+            frappe.get_value("Airplane Flight", self.flight, "airplane"),
+            "capacity"
+        )
+        existing_tickets = frappe.get_all("Airplane Ticket",
+            filters={'flight': self.flight},
+            fields=['name']
+        )
+        if len(existing_tickets) >= capacity:
+            frappe.throw( f"There are no seats left on flight {self.flight} ({len(existing_tickets)}/{capacity}).", "Validation")
+            
+        return
+        
     def before_save(self):
         # calculate total
         total_amount = self.flight_price
