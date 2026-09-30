@@ -25,3 +25,19 @@ class AirplaneFlight(WebsiteGenerator):
     def on_submit(self):
         self.status = "Completed"
         return
+
+    def on_update(self):
+        # update related tickets with the gate number
+        frappe.db.sql("""
+            UPDATE `tabAirplane Ticket`
+            SET `gate` = %(gate)s
+            WHERE
+                `flight` = %(flight)s;
+            """,
+            {
+                'gate': self.gate,
+                'flight': self.name
+            }
+        )
+        frappe.db.commit()
+        return
