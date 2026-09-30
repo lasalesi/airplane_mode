@@ -1,0 +1,214 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_guest_to_view": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-09-30 13:59:10.975815",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tab_details",
+  "shop_number",
+  "shop_name",
+  "shop_type",
+  "column_break_wzuk",
+  "airport",
+  "available_for_lease",
+  "naming_series",
+  "sec_phys",
+  "area",
+  "tab_tenant",
+  "sec_tenant",
+  "tenant_name",
+  "column_break_zyvk",
+  "email",
+  "tab_contract",
+  "sec_contract",
+  "contract_start",
+  "contract_expiry",
+  "column_break_itpa",
+  "rent_amount",
+  "currency",
+  "tab_web",
+  "is_published",
+  "route"
+ ],
+ "fields": [
+  {
+   "fieldname": "tab_details",
+   "fieldtype": "Tab Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "shop_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Shop Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "shop_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Shop Name"
+  },
+  {
+   "fieldname": "column_break_wzuk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "airport",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Airport",
+   "options": "Airport",
+   "reqd": 1
+  },
+  {
+   "default": "SHOP-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "SHOP-.#####"
+  },
+  {
+   "fieldname": "sec_phys",
+   "fieldtype": "Section Break",
+   "label": "Physical Properties"
+  },
+  {
+   "fieldname": "area",
+   "fieldtype": "Data",
+   "label": "Area"
+  },
+  {
+   "fieldname": "tab_tenant",
+   "fieldtype": "Tab Break",
+   "label": "Tenant"
+  },
+  {
+   "fieldname": "sec_tenant",
+   "fieldtype": "Section Break",
+   "label": "Tenant "
+  },
+  {
+   "fieldname": "tenant_name",
+   "fieldtype": "Data",
+   "label": "Tenant Name"
+  },
+  {
+   "fieldname": "column_break_zyvk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "tab_contract",
+   "fieldtype": "Tab Break",
+   "label": "Contract"
+  },
+  {
+   "fieldname": "sec_contract",
+   "fieldtype": "Section Break",
+   "label": "Contract Details"
+  },
+  {
+   "fieldname": "contract_start",
+   "fieldtype": "Date",
+   "label": "Contract Start"
+  },
+  {
+   "fieldname": "contract_expiry",
+   "fieldtype": "Date",
+   "label": "Contract Expiry"
+  },
+  {
+   "fieldname": "column_break_itpa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rent_amount",
+   "fieldtype": "Currency",
+   "label": "Rent Amount"
+  },
+  {
+   "default": "0",
+   "fieldname": "available_for_lease",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Available for Lease"
+  },
+  {
+   "fieldname": "shop_type",
+   "fieldtype": "Link",
+   "label": "Shop Type",
+   "options": "Shop Type"
+  },
+  {
+   "default": "CHF",
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "tab_web",
+   "fieldtype": "Tab Break",
+   "label": "Website"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_published",
+   "fieldtype": "Check",
+   "label": "Is Published"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  }
+ ],
+ "grid_page_length": 50,
+ "has_web_view": 1,
+ "index_web_pages_for_search": 1,
+ "is_published_field": "is_published",
+ "links": [
+  {
+   "group": "Rent",
+   "link_doctype": "Rent Slip",
+   "link_fieldname": "shop"
+  }
+ ],
+ "modified": "2026-09-30 15:39:45.427143",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Airport Shop",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

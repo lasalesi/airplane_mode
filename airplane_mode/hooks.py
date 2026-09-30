@@ -155,23 +155,23 @@ website_generators = ["Airplane Flight"]
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
+scheduler_events = {
 # 	"all": [
 # 		"airplane_mode.tasks.all"
 # 	],
-# 	"daily": [
-# 		"airplane_mode.tasks.daily"
-# 	],
+#    "daily": [
+#        "airplane_mode.airport_shop_management.rent.process_rent"
+#    ]
 # 	"hourly": [
 # 		"airplane_mode.tasks.hourly"
 # 	],
 # 	"weekly": [
 # 		"airplane_mode.tasks.weekly"
 # 	],
-# 	"monthly": [
-# 		"airplane_mode.tasks.monthly"
-# 	],
-# }
+    "monthly": [
+        "airplane_mode.airport_shop_management.rent.process_rent"
+    ]
+}
 
 # Testing
 # -------
@@ -268,5 +268,9 @@ fixtures = [
     {
         "doctype": "Web Page",
         "filters": [["name", "in", ["show-me"]]]
+    },
+    {
+        "doctype": "Shop Type",
+        "filters": [["name", "in", ["Stall", "Walk-through", "Normal"]]]
     }
 ]

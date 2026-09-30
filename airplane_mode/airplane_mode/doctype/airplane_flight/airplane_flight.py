@@ -27,17 +27,22 @@ class AirplaneFlight(WebsiteGenerator):
         return
 
     def on_update(self):
-        # update related tickets with the gate number
-        frappe.db.sql("""
-            UPDATE `tabAirplane Ticket`
-            SET `gate` = %(gate)s
-            WHERE
-                `flight` = %(flight)s;
-            """,
-            {
-                'gate': self.gate,
-                'flight': self.name
-            }
-        )
-        frappe.db.commit()
+        frappe.enqueue(method=async_update_gate, queue='short', timeout=30,
+            **{'flight': self.name, 'gate': self.gate})
         return
+        
+def async_update_gate(flight, gate):
+    # update related tickets with the gate number
+    frappe.db.sql("""
+        UPDATE `tabAirplane Ticket`
+        SET `gate` = %(gate)s
+        WHERE
+            `flight` = %(flight)s;
+        """,
+        {
+            'gate': gate,
+            'flight': flight
+        }
+    )
+    frappe.db.commit()
+    return

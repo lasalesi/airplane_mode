@@ -1,0 +1,12 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<h1>Shop {{ doc.name }}</h1>
+<p><strong>Airport:</strong> {{ doc.airport }} </p>
+<p><strong>Shop Number</strong> {{ doc.shop_number }}</p>
+<p><strong>Shop Name</strong> {{ doc.shop_name }}</p>
+<p><strong>Area</strong> {{ doc.area }} m²</p>
+
+
+<a href="/shop-interest/new?shop={{ doc.name }}" class="btn btn-primary">I am interested</a>
+{% endblock %}

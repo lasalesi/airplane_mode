@@ -7,17 +7,16 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "col_1",
+  "sec_shops",
+  "shops_html",
+  "column_break_inod",
+  "sec_details",
   "code",
   "col_2",
   "city",
   "country"
  ],
  "fields": [
-  {
-   "fieldname": "col_1",
-   "fieldtype": "Column Break"
-  },
   {
    "fieldname": "code",
    "fieldtype": "Data",
@@ -43,12 +42,36 @@
    "label": "Country",
    "options": "Country",
    "reqd": 1
+  },
+  {
+   "fieldname": "sec_shops",
+   "fieldtype": "Section Break",
+   "label": "Shops Summary"
+  },
+  {
+   "fieldname": "shops_html",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "sec_details",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "column_break_inod",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2026-09-23 09:25:45.536805",
+ "links": [
+  {
+   "group": "Shops",
+   "link_doctype": "Airport Shop",
+   "link_fieldname": "airport"
+  }
+ ],
+ "modified": "2026-09-30 14:40:19.582416",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airport",

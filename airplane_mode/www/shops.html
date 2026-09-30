@@ -1,0 +1,18 @@
+{% extends "templates/pages/shop_portal.html" %}
+{% block content %}
+<h1>Shops</h1>
+<p>Discover our shops</p>
+<div class="flex two">
+{% for shop in shops %}
+<div><article class="card">
+<h2><a href="/{{ shop.route | e }}">{{ shop.shop_name | e }}</a></h2>
+<p>{{ shop.airport | e }} · {{ shop.shop_number | e }} · {{ shop.shop_type | e }}</p>
+<p>{{ shop.area }} m² · {{ frappe.format_value(shop.rent_amount, {"fieldtype":"Currency", "options":shop.currency}) }} / month</p>
+<p>{{ 'Available' if shop.available_for_lease else 'Rented' }}</p>
+<a class="button" href="/{{ shop.route | e }}">Details</a>
+</article></div>
+{% else %}<p>No shops found</p>{% endfor %}
+</div>
+{% if start %}<a class="button" href="/shops?start={{ [0, start - 20] | max }}">Back</a>{% endif %}
+{% if has_next %}<a class="button" href="/shops?start={{ start + 20 }}">Next</a>{% endif %}
+{% endblock %}
